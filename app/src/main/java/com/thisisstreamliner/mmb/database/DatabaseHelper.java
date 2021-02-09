@@ -1,5 +1,6 @@
 package com.thisisstreamliner.mmb.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -38,11 +39,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "finish_date DATE, init_amount DOUBLE, remained_amount DOUBLE, monthly_payment DOUBLE, " +
                 "monthly_roi DOUBLE, name TEXT, user_id INTEGER)";
 
+        String createTransactionTable = "CREATE TABLE transactions (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "amount DOUBLE, date DATE, type TEXT, user_id INTEGER, recipient TEXT, description TEXT)";
+
+        String createItemsTable = "CREATE TABLE items (_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, image_url TEXT, " +
+                "description TEXT)";
+
         db.execSQL(createUserTable);
         db.execSQL(createShoppingTable);
         db.execSQL(createInvestmentTable);
         db.execSQL(createLoansTable);
+        db.execSQL(createTransactionTable);
+        db.execSQL(createItemsTable);
 
+        addInitialItems(db);
+
+    }
+
+    private void addInitialItems(SQLiteDatabase db) {
+        Log.d(TAG, "addInitialItems: started");
+        ContentValues values = new ContentValues();
+        values.put("name", "Bike");
+        values.put("image_url", "https://cdn.webshopapp.com/shops/212063/files/215250743/6ku-fixie-single-speed-bike-barcelona.jpg");
+        values.put("description", "The perfect mountain bike");
+        db.insert("items", null, values);
     }
 
     @Override
