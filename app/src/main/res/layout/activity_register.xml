@@ -12,19 +12,19 @@
         android:layout_centerInParent="true">
 
         <ImageView
+            android:id="@+id/logo"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:id="@+id/logo"
-            android:src="@mipmap/meicode"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/meicode" />
 
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/logo"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
             android:hint="Email"
             android:inputType="textEmailAddress" />
@@ -34,8 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/emailEditText"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
             android:hint="Password"
             android:inputType="textPassword" />
@@ -45,67 +45,67 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/passwordEditText"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
-            android:hint="Name"/>
+            android:hint="Name" />
 
         <EditText
             android:id="@+id/addressEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nameEditText"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
-            android:lines="2"
-            android:hint="Address"/>
+            android:hint="Address"
+            android:lines="2" />
 
         <RelativeLayout
+            android:id="@+id/imagesRelativeLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imagesRelativeLayout"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/addressEditText"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
                 android:id="@+id/firstImage"
-                android:src="@mipmap/boy"/>
-
-            <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:src="@mipmap/boy" />
+
+            <ImageView
                 android:id="@+id/secondImage"
-                android:src="@mipmap/girl"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
                 android:layout_toEndOf="@+id/firstImage"
-                android:layout_marginStart="10dp"/>
+                android:src="@mipmap/girl" />
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
                 android:id="@+id/thirdImage"
-                android:src="@mipmap/man"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
                 android:layout_toEndOf="@+id/secondImage"
-                android:layout_marginStart="10dp"/>
+                android:src="@mipmap/man" />
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
                 android:id="@+id/forthImage"
-                android:src="@mipmap/woman"
-                android:layout_toEndOf="@+id/thirdImage"
-                android:layout_marginStart="10dp"/>
-
-            <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/thirdImage"
+                android:src="@mipmap/woman" />
+
+            <ImageView
                 android:id="@+id/fifthImage"
-                android:src="@mipmap/secon_girl"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
                 android:layout_toEndOf="@+id/forthImage"
-                android:layout_marginStart="10dp"/>
+                android:src="@mipmap/secon_girl" />
 
         </RelativeLayout>
 
@@ -113,8 +113,8 @@
             android:id="@+id/registerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/imagesRelativeLayout"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="Register" />
 
@@ -122,22 +122,22 @@
             android:id="@+id/warningTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/registerButton"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
             android:text="Warning"
             android:textColor="@color/purple_200"
-            android:layout_below="@+id/registerButton"
-            android:layout_marginTop="20dp"
             android:visibility="gone" />
 
         <TextView
             android:id="@+id/loginTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Have an account? Login here."
             android:layout_below="@+id/warningTextView"
             android:layout_centerHorizontal="true"
-            android:textColor="@android:color/holo_blue_bright"
-            android:layout_marginTop="50dp" />
+            android:layout_marginTop="50dp"
+            android:text="Have an account? Login here."
+            android:textColor="@android:color/holo_blue_bright" />
 
     </RelativeLayout>
 
@@ -149,7 +149,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:textStyle="italic"
-        android:text="Developed by ThisisStreamliner" />
+        android:text="Developed by ThisisStreamliner"
+        android:textStyle="italic" />
 
 </RelativeLayout>
