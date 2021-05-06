@@ -3,6 +3,7 @@ package com.thisisstreamliner.mmb.authentication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,7 +17,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.thisisstreamliner.mmb.MainActivity;
 import com.thisisstreamliner.mmb.R;
+import com.thisisstreamliner.mmb.Utils;
 import com.thisisstreamliner.mmb.database.DatabaseHelper;
 import com.thisisstreamliner.mmb.models.User;
 
@@ -194,6 +197,11 @@ public class RegisterActivity extends AppCompatActivity {
             super.onPostExecute(user);
             if (null != user) {
                 Toast.makeText(RegisterActivity.this, "User " + user.getEmail() + " registered successfully.", Toast.LENGTH_SHORT).show();
+                Utils utils = new Utils(RegisterActivity.this);
+                utils.addUserToSharedPreferences(user);
+                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             } else {
                 Toast.makeText(RegisterActivity.this, "Wasn't able to register, please try again later", Toast.LENGTH_SHORT).show();
             }
